@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sobre.css') }}">
+{% endblock %}
+
+{% block content %}
+  <body class="pagina-sobre">
+  <section class="container" role="region" aria-label="Sobre a Dapaz Confeitaria">
+    <div class="image-wrapper" tabindex="0" aria-label="Foto da Dapaz Confeitaria">
+      <img src="{{ url_for('static', filename='img/ana.png') }}" alt="Foto da Dapaz Confeitaria" />
+    </div>
+    <article class="text-content">
+      <h1>Dapaz Confeitaria</h1>
+      <p>Na Dapaz Confeitaria, nossa história começou de uma forma simples, mas cheia de amor. Em 2018, a necessidade de fazer um bolo especial para a minha sobrinha despertou em mim uma paixão que eu nunca imaginei que existisse: a confeitaria. Aquele primeiro bolo, feito com carinho e dedicação, foi o ponto de partida de uma jornada deliciosa.</p>
+      <p>Com o passar do tempo, o amor pela confeitaria cresceu e, junto com ele, nossa clientela. Cada novo pedido era uma oportunidade de criar algo único e especial. Assim, o mundo da papelaria personalizada entrou em cena, permitindo que cada festa se tornasse ainda mais mágica e inesquecível.</p>
+      <p>Na Dapaz Confeitaria, acreditamos que cada bolo deve contar uma história. Por isso, nos dedicamos a transformar nossos bolos em verdadeiras obras de arte, sempre alinhados às tendências do momento. A cada dia, buscamos nos reinventar, experimentando novas receitas e sabores, sempre atentos ao que há de mais atual no universo da confeitaria.</p>
+      <p>Nosso compromisso é agradar os paladares dos nossos clientes, oferecendo não apenas produtos de qualidade, mas também uma experiência única e personalizada. Na Dapaz Confeitaria, cada fatia é feita com amor, e cada detalhe é pensado para tornar suas celebrações ainda mais especiais. Venha nos conhecer e descobrir o sabor da felicidade!</p>
+    </article>
+  </section>
+  </body>
+{% endblock %}

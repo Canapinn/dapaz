@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+
+{% block styles %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@latest/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bolos.css') }}">
+{% endblock %}
+
+{% block content %}
+  <main class="bolos-container" id="bolos-conteudo" tabindex="-1" aria-live="polite">
+    <h2 class="titulo-animado" aria-label="Título Bolos e Sabores">
+      Bolos &amp; Sabores
+    </h2>
+    <div class="categorias" role="list" aria-label="Filtros de categorias de bolos">
+      <button class="categoria-btn active" data-categoria="todos" role="listitem" aria-pressed="true">Todos</button>
+      <button class="categoria-btn" data-categoria="tradicionais" role="listitem" aria-pressed="false">Tradicionais</button>
+      <button class="categoria-btn" data-categoria="especiais" role="listitem" aria-pressed="false">Especiais</button>
+      <button class="categoria-btn" data-categoria="festas" role="listitem" aria-pressed="false">Festas</button>
+    </div>
+
+    <section class="bolos-grid" aria-label="Lista de bolos">
+      <!-- Bolos Tradicionais -->
+      <article class="bolo-card" data-categoria="tradicionais" tabindex="0">
+        <div class="bolo-imagem">
+          <img src="{{ url_for('static', filename='img/bolo7.jpg') }}" alt="Massa tradicional chocolate e branca" loading="lazy" />
+        </div>
+        <div class="bolo-info">
+          <h3>Massas de bolo</h3>
+          <p>Massa de chocolate macia e massa branca</p>
+          <button class="ver-mais-btn"
+            aria-haspopup="dialog"
+            aria-controls="bolo-modal"
+            aria-expanded="false"
+            data-imagem="{{ url_for('static', filename='img/bolo7.jpg') }}"
+            data-titulo="Massas"
+            data-descricao="Bolo de massa de chocolate e massa branca."
+            data-preco="A partir de R$ 75,00"
+          >Ver Mais</button>
+        </div>
+      </article>
+      <!-- Bolos Especiais -->
+      <article class="bolo-card" data-categoria="especiais" tabindex="0">
+        <div class="bolo-imagem">
+          <img src="{{ url_for('static', filename='img/cp.png') }}" alt="Bolo de Morango " loading="lazy" />
+        </div>
+        <div class="bolo-info">
+          <h3>Recheios Especiais</h3>
+          <p>Recheios Com frutas frescas</p>
+          <button class="ver-mais-btn"
+            aria-haspopup="dialog"
+            aria-controls="bolo-modal"
+            aria-expanded="false"
+            data-imagem="{{ url_for('static', filename='img/cp.png') }}"
+            data-titulo="Recheios Especiais"
+            data-descricao="Recheios tradicionais e especiais."
+            data-sabores="Chocolate goumert,paçoca,mousse, creme belga,sensação,beijinho,chocolate branco, prestígio, doce de leite,Ninho com nutella, red velvet."
+            data-preco="A partir de R$ 75,00"
+          >Ver Mais</button>
+        </div>
+      </article>
+      <article class="bolo-card" data-categoria="especiais" tabindex="0">
+        <div class="bolo-imagem">
+          <img src="{{ url_for('static', filename='img/red.png') }}" alt="Bolo Red Velvet com cream cheese" loading="lazy" />
+        </div>
+        <div class="bolo-info">
+          <h3>Red Velvet</h3>
+          <p>Clássico bolo vermelho com cream cheese</p>
+          <button class="ver-mais-btn"
+            aria-haspopup="dialog"
+            aria-controls="bolo-modal"
+            aria-expanded="false"
+            data-imagem="{{ url_for('static', filename='img/red.png') }}"
+            data-titulo="Red Velvet"
+            data-descricao="Clássico bolo de massa vermelha aveludada, com recheio de cream cheese."
+            data-preco="A partir de R$ 80,00"
+          >Ver Mais</button>
+        </div>
+      </article>
+      <!-- Bolos de Festa -->
+      <article class="bolo-card" data-categoria="festas" tabindex="0">
+        <div class="bolo-imagem">
+          <img src="{{ url_for('static', filename='img/bolo4.jpg') }}" alt="Bolo personalizado aniversário com tema" loading="lazy" />
+        </div>
+        <div class="bolo-info">
+          <h3>Topos de Bolo</h3>
+          <p>Bolo personalizado com tema à sua escolha</p>
+          <button class="ver-mais-btn"
+            aria-haspopup="dialog"
+            aria-controls="bolo-modal"
+            aria-expanded="false"
+            data-imagem="{{ url_for('static', filename='img/bolo4.jpg') }}"
+            data-titulo="Topos de Bolo"
+            data-descricao="Bolo personalizado para ocasiões especiais como aniversários, com tema e decoração à sua escolha."
+            data-preco="Consultar valores"
+          >Ver Mais</button>
+        </div>
+            <!-- Modais -->
+    <div id="bolo-modal" class="modal" aria-modal="true" role="dialog" aria-labelledby="modal-titulo" aria-describedby="modal-descricao" hidden>
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Fechar">
+          &times;
+        </button>
+        <h2 id="modal-titulo"></h2>
+        <img id="modal-imagem" src="" alt="" />
+        <p id="modal-descricao"></p>
+        <ul id="modal-sabores"></ul>
+        <p id="modal-preco"></p>
+      </div>
+    </div>
+      </article>
+    </section>
+   <p class="kit-festa-titulo">Kit Festa</p>
+  <!-- Seção de Kit Festa -->
+   <div class="swiper swiper-bolos">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img src="{{ url_for('static', filename='img/kt1.jpg') }}" alt="Kit Festa 1">
+    </div>
+    <div class="swiper-slide">
+      <img src="{{ url_for('static', filename='img/kit2.jpg') }}" alt="Kit Festa 2">
+    </div>
+    <div class="swiper-slide">
+      <img src="{{ url_for('static', filename='img/kit3.jpg') }}" alt="Kit Festa 3">
+    </div>
+    <div class="swiper-slide">
+      <img src="{{ url_for('static', filename='img/doces.jpg') }}" alt="Doces variados">
+  </div>
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>
+  </main>
+{% endblock %}
+
