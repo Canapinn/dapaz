@@ -1,0 +1,380 @@
+/* Slider de Imagens */
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza todo o conteúdo interno */
+    margin: 10px auto;
+    max-width: 900px;
+    background: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: none;
+    border: none;
+    position: relative;
+}
+
+/* Centralizar o Swiper */
+.swiper-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Swiper estrutura */
+ .swiper {
+  width: 100%; /* Ajuste a largura conforme necessário */
+  max-width: 1200px; /* Defina uma largura máxima menor */
+  margin: 0 auto; /* Centraliza horizontalmente */
+  height: auto; /* Ajusta a altura automaticamente */
+  }
+
+  .swiper-wrapper {
+      display: flex;
+      transition-property: transform;
+      box-sizing: content-box;
+      cursor: grab;
+  }
+
+  .swiper-wrapper.active {
+    cursor: grabbing;
+}
+
+  .swiper-slide {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      position: relative; /* Importante para posicionar as imagens */
+      overflow: hidden; /* Garante que a imagem hover não vaze */
+      flex-shrink: 0; /* Impede que os slides encolham */
+      width: auto; /* Ajusta a largura automaticamente */
+      height: auto; /* Permite que os slides se ajustem ao conteúdo */
+      padding: 0;
+      margin: 0;
+  }
+
+.swiper-slide img {
+  width: 100%; /* Garante que as imagens preencham a largura do slide */
+  height: 300px; /* Define uma altura padrão para todas as imagens */
+  object-fit: contain; /* Preenche o espaço mantendo a proporção e cortando se necessário */
+  position: static; /* Remove o posicionamento absoluto */
+  top: auto;
+  left: auto;
+  transition: opacity 0.3s ease; /* Transição suave */
+  padding: 0;
+  margin: 0;
+  display: block; /* Garante que não haja espaço extra abaixo da imagem */
+  border: 1px solid #fab7ef; /* Adiciona uma borda leve */
+  box-sizing: border-box; /* Inclui a borda na largura e altura */
+}
+
+.swiper-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s ease;
+}
+
+.swiper-slide .hover-image {
+  max-width: 100%; /* Garante que as imagens não ultrapassem o slide */
+  height: auto; /* Mantém a proporção da imagem */
+  object-fit: cover; /* Preenche o espaço mantendo a proporção */
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0; /* Inicialmente invisível */
+  transition: opacity 0.3s ease; /* Transição suave */
+}
+
+.swiper-slide {
+  position: 0;
+  overflow: 0;
+}
+
+.swiper-image {
+  width: 900%;
+  height: auto;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s ease;
+}
+
+.swiper-slide .hover-image {
+  opacity: 0;
+}
+
+.swiper-slide:hover .swiper-image {
+  opacity: 0;
+}
+
+.swiper-slide:hover .hover-image {
+  opacity: 1;
+}
+
+/* Texto do slide */
+.expo-content {
+    text-align: center;
+    margin-top: 5px; /* Reduz o espaçamento superior */
+    font-size: 1em; /* Reduz o tamanho da fonte */
+    font-weight: bold;
+    color: #684b62;
+}
+
+/* Botões de navegação Swiper */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #be8dbe; /* Lilás */
+    background: rgba(255,255,255,0.5); /* Fundo branco translúcido */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 2px 8px rgba(235, 28, 28, 0.1);
+    transition: background 0.3s, opacity 0.3s;
+    opacity: 0.5; /* Meio transparente */
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background: #834183;
+    color: #fff;
+    opacity: 1; /* Fica totalmente visível ao passar o mouse */
+}
+
+/* Paginação Swiper */
+.swiper-pagination-bullet {
+    background: #be8dbe;
+    opacity: 0.7;
+}
+
+.swiper-pagination-bullet-active {
+    background: #c97cd8;
+    opacity: 1;
+}
+
+.swiper-pagination {
+    display: none !important;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    .slider-container {
+        padding: 5px;
+    }
+
+    nav a {
+        border: none;
+        background: none;
+        box-shadow: none;
+        border-radius: 0;
+        font-size: 0.7em; /* fonte menor só no celular */
+        padding: 5px 10px;
+    }
+
+    .pagina-item {
+        border: none;
+        box-shadow: none;
+        background-color: #fff;
+    }
+}
+
+.destaque-text {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 2em;
+    font-weight: bold;
+    color: #000000e1; /* PRETO */
+    padding: 5px 10px;
+}
+
+/* Estilização opcional para o indicador de destaque */
+.destaque-text {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #ff9900; /* Cor de destaque */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  z-index: 30;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+/* Nossas Páginas */
+.nossas-paginas {
+    text-align: center;
+    padding: 20px;
+}
+
+.nossas-paginas h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+    /* Degradê no texto */
+    background: linear-gradient(90deg, #a6ecd7, #e498dd, #ffb6c1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.grid-paginas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.pagina-item {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    padding: 0; /* Remova o padding para a imagem encostar nas bordas */
+}
+
+.pagina-item img {
+    width: 100%;
+    max-width: 100%;
+    height: 200px; /* Defina uma altura fixa */
+    object-fit: contain; /* Preenche o espaço mantendo a proporção, sem cortar */
+    background: #ffffff;
+    border-radius: 10px 10px 0 0;
+    display: block;
+    margin: 0;
+    transition: transform 0.3s ease;
+}
+
+.pagina-item img:hover {
+    transform: scale(1.1);
+}
+
+.pagina-item h3 {
+    font-size: 1.2em; /* Reduz o tamanho da fonte */
+    margin-bottom: 5px; /* Reduz o espaçamento inferior */
+    color: #DB7093; /* Rosé */
+}
+
+.pagina-item p {
+    font-size: 0.9em; /* Reduz o tamanho da fonte */
+    color: #7B3F00; /* Chocolate */
+    flex-grow: 1;
+    margin-bottom: 10px; /* Reduz o espaçamento inferior */
+    text-align: center;      /* Centraliza o texto */
+    width: 100%;             /* Garante centralização total */
+}
+
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    font-weight: bold; /* Adicionado para manter o texto em negrito */
+    font-size: 1.08em; /* Adicionado para manter o tamanho da fonte */
+    text-decoration: none; /* Adicionado para remover sublinhado */
+    display: inline-flex; /* Centraliza o texto verticalmente */
+    justify-content: center; /* Centraliza o texto horizontalmente */
+    align-items: center;
+    margin: 0 auto 10px auto; /* Mantém o botão centralizado */
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ce6cc1, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #eaa8ec
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #e7b6d3;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+.btn-veja-mais {
+    display: block; /* Alterado para block para ocupar a largura total e permitir centralização */
+    width: fit-content; /* Ajusta a largura ao conteúdo */
+    margin: 10px auto; /* Centraliza horizontalmente e adiciona margem superior */
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #8f658f;
+    background-image: linear-gradient(to right, #6e84e7, #d8a6e3, #c98dcf, #bb74ba, #ac5ca6, #9e4392, #902a7e, #ebeee6, #e640bc); /* Cores puxando para lilás e rosé */
+    background-size: 400% 100%;
+    border-radius: 50px;
+    transition: background-position 0.8s ease-in-out;
+}
+
+.btn-veja-mais:hover {
+    background-position: 100% 0;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+/* Ajustes de Responsividade Adicionais */
+@media (max-width: 768px) {
+    .destaque-text {
+        font-size: 1.5em;
+    }
+
+    .nossas_paginas h2 {
+        font-size: 1.8em;
+    }
+
+    .pagina-item h3 {
+        font-size: 1.3em;
+    }
+
+    .grid-paginas {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    }
+}

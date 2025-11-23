@@ -1,0 +1,160 @@
+/* Estilos para a página "Sobre" */
+
+/* Importa a fonte Poppins do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+/* Variáveis CSS para cores, tamanhos e transições, facilitando a manutenção */
+:root {
+  --color-bg-start: #f0e6f6; /* Cor de início do gradiente de fundo */
+  --color-bg-end: #e8d0e8;   /* Cor de fim do gradiente de fundo */
+  --color-text: #6b7280;     /* Cor padrão do texto */
+  --color-heading: #111827;  /* Cor padrão dos títulos */
+  --color-accent: #be185d;   /* Cor de destaque principal */
+  --radius: 12px;            /* Raio das bordas arredondadas */
+  --shadow-base: rgba(0,0,0,0.08) 0 10px 30px; /* Sombra base para elementos */
+  --shadow-hover-container: rgba(190, 24, 93, 0.25) 0 20px 50px; /* Sombra no hover do container */
+  --shadow-hover-image: rgba(190, 24, 93, 0.45) 0 15px 45px;   /* Sombra no hover da imagem */
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Transição suave para efeitos */
+  --max-container-width: 1200px; /* Largura máxima para o container (não usado no .pagina-sobre .container) */
+}
+
+/* Estilos para o container principal da página "Sobre" */
+.pagina-sobre .container {
+  max-width: 90%; /* Ajustado para 90% para melhor adaptação em telas grandes, sem ser 100% da viewport */
+  width: 100%; /* Ocupa 100% do espaço disponível até o max-width */
+  background: var(--color-bg); /* Fundo branco do container */
+  border-radius: var(--radius); /* Bordas arredondadas */
+  box-shadow: var(--shadow-base); /* Sombra padrão */
+  display: flex; /* Usa flexbox para alinhar imagem e texto */
+  gap: 3rem; /* Espaço entre a imagem e o texto */
+  padding: 3rem 4rem; /* Padding interno do container */
+  align-items: flex-start; /* Alinha itens ao topo */
+  transition: var(--transition); /* Transição suave para o efeito de hover */
+}
+
+/* Efeito de hover no container */
+.pagina-sobre .container:hover {
+  box-shadow: var(--shadow-hover-container); /* Sombra mais intensa no hover */
+}
+
+/* Estilos para o wrapper da imagem */
+.pagina-sobre .image-wrapper {
+  flex: 0 0 320px; /* Não permite crescer nem encolher, com largura base de 320px */
+  border-radius: var(--radius); /* Bordas arredondadas */
+  overflow: hidden; /* Esconde o que excede as bordas arredondadas */
+  box-shadow: rgb(190, 24, 93) 0 10px 30px; /* Sombra para a imagem */
+  cursor: pointer; /* Muda o cursor para indicar interatividade */
+  transition: var(--transition); /* Transição suave para o efeito de hover */
+}
+
+/* Efeito de hover no wrapper da imagem */
+.pagina-sobre .image-wrapper:hover {
+  transform: scale(1.03); /* Leve aumento de escala na imagem */
+  box-shadow: var(--shadow-hover-image); /* Sombra mais intensa na imagem no hover */
+}
+
+/* Estilos para a imagem dentro do wrapper */
+.pagina-sobre .image-wrapper img {
+  display: block; /* Garante que a imagem se comporte como bloco */
+  width: 100%; /* Ocupa 100% da largura do seu container */
+  height: auto; /* Mantém a proporção da imagem */
+  aspect-ratio: 0 / 10; /* Força uma proporção específica (largura/altura) */
+  object-fit: cover; /* Recorta a imagem para cobrir o espaço sem distorcer */
+}
+
+/* Estilos para o conteúdo de texto */
+.pagina-sobre .text-content {
+  flex: 1; /* Permite que o texto ocupe o espaço restante */
+  color: var(--color-heading); /* Cor do texto */
+}
+
+/* Estilos para o título H1 (com cor inovadora e efeitos) */
+.pagina-sobre h1 {
+  font-weight: 700; /* Peso da fonte */
+  font-size: 3.5rem; /* Tamanho da fonte */
+  margin-top: 0; /* Remove margem superior padrão */
+  margin-bottom: 1rem; /* Margem inferior */
+  line-height: 1.1; /* Altura da linha para melhor leitura */
+  
+  /* --- Efeitos de Cor e Animação Inovadores para o H1 --- */
+  color: #fff; /* Cor fallback para navegadores que não suportam */
+  /* Novo gradiente mais vibrante e inovador */
+  background: linear-gradient(
+    270deg,
+    #ff66cc, /* Rosa vibrante */
+    #cc33ff, /* Roxo elétrico */
+    #33ccff, /* Azul céu */
+    #66ff66, /* Verde limão */
+    #ffcc33, /* Laranja vibrante */
+    #ff66cc  /* Volta ao rosa para o loop */
+  );
+  background-size: 600% 600%; /* Tamanho maior do background para permitir o movimento */
+  -webkit-background-clip: text; /* Recorta o background para dentro do texto */
+  -webkit-text-fill-color: transparent; /* Torna o texto transparente para o background aparecer */
+  animation: gradientShift 10s ease infinite; /* Aplica a animação do gradiente */
+  filter: drop-shadow(0 0 10px rgba(255, 102, 204, 0.5)); /* Sombra mais pronunciada e colorida */
+  user-select: none; /* Previne a seleção de texto */
+  transition: filter 0.3s ease, transform 0.3s ease; /* Transição para efeitos de hover */
+}
+
+/* Efeito de hover no título H1 */
+.pagina-sobre h1:hover {
+  filter: drop-shadow(0 0 15px rgba(255, 102, 204, 0.8)); /* Sombra ainda mais forte no hover */
+  transform: translateY(-2px); /* Leve movimento para cima no hover */
+}
+
+/* Animação para o gradiente do H1 */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; } /* Começa o gradiente à esquerda */
+  50% { background-position: 100% 50%; } /* Move o gradiente para a direita */
+  100% { background-position: 0% 50%; } /* Retorna ao início para um loop infinito */
+}
+
+/* Estilos para o texto de destaque (accent) */
+.pagina-sobre .accent {
+  color: var(--color-accent); /* Usa a cor de destaque definida nas variáveis */
+}
+
+/* Estilos para os parágrafos */
+.pagina-sobre p {
+  margin-top: 1.25rem; /* Margem superior */
+  margin-bottom: 1.25rem; /* Margem inferior */
+  color: var(--color-text); /* Cor do texto */
+  font-size: 18px; /* Tamanho da fonte */
+  line-height: 1.6; /* Altura da linha para melhor legibilidade */
+}
+
+/* Media query para telas menores (smartphones e tablets em modo retrato) */
+@media (max-width: 900px) {
+  .pagina-sobre .container {
+    flex-direction: column; /* Altera a direção do flexbox para empilhar itens */
+    padding: 2rem; /* Reduz o padding interno */
+    gap: 2rem; /* Reduz o espaçamento entre itens */
+  }
+  .pagina-sobre .image-wrapper {
+    width: 100%; /* Imagem ocupa 100% da largura */
+    max-height: 360px; /* Altura máxima da imagem */
+    flex: none; /* Remove flexbox para largura fixa */
+    box-shadow: rgba(190, 24, 93, 0.15) 0 7px 20px; /* Sombra menor para telas menores */
+  }
+  .pagina-sobre h1 {
+    font-size: 2.8rem; /* Reduz o tamanho da fonte do h1 */
+    text-align: center; /* Centraliza o H1 em telas menores */
+  }
+  .pagina-sobre p {
+    text-align: center; /* Centraliza o texto do parágrafo em telas menores */
+  }
+}
+
+/* Media query para telas muito pequenas (smartphones) */
+@media (max-width: 480px) {
+  .pagina-sobre .container {
+    padding: 1.5rem; /* Reduz ainda mais o padding */
+  }
+  .pagina-sobre h1 {
+    font-size: 2.2rem; /* Reduz mais o tamanho da fonte do h1 */
+  }
+  .pagina-sobre p {
+    font-size: 16px; /* Reduz o tamanho da fonte dos parágrafos */
+  }
+}

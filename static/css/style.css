@@ -1,0 +1,69 @@
+/* Ajuste o caminho do arquivo CSS conforme necessário */
+
+/* Slider: imagens do mesmo tamanho */
+.slider .slide img {
+    width: 100%;         /* Ocupa toda a largura do slide */
+    height: 500px;       /* Altura fixa */
+    object-fit: contain; /* Mostra a imagem inteira, sem cortar */
+    border-radius: 10px;
+    display: block;
+    background: #fff;    /* Opcional: fundo branco para as barras */
+}
+
+/* Centraliza o slider e limita a largura máxima */
+.slider-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+/* Media query para telas menores que 768px (tamanho típico de tablets) */
+@media (max-width: 768px) {
+  .fashion-slider-title {
+    left: 5%;
+  }
+
+  .fashion-slider-title-text {
+    font-size: 1.5em;
+  }
+
+  .fashion-slider-button {
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+  }
+
+  .fashion-slider-svg-wrap {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* Media query para telas menores que 480px (tamanho típico de smartphones) */
+@media (max-width: 480px) {
+  .fashion-slider-title-text {
+    font-size: 1.2em;
+  }
+
+  .fashion-slider-button {
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+  }
+
+  .fashion-slider-button-prev {
+    left: 5px;
+  }
+
+  .fashion-slider-button-next {
+    right: 5px;
+  }
+}
+/* Estilos gerais do seu site */
+body { /* ... */ }
+header { /* ... */ }
+/* ... */
+
+/* Estilos específicos do slider */
+.fashion-slider { /* ... */ }
+.swiper-wrapper { /* ... */ }
+/* ... e todo o CSS do slider que forneci ... */
