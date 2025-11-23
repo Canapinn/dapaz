@@ -1,0 +1,143 @@
+
+
+/* Estilos para a página de contato */
+/* Estilos para o contêiner do formulário e da página de resumo */
+#contato-container,
+#summaryPage {
+  background: white;
+  max-width: 480px;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(102, 44, 109, 0.25);
+  padding: 30px 25px;
+  box-sizing: border-box;
+  margin: 20px auto; /* Centraliza o contêiner */
+}
+
+/* Estilos para o título da página de contato */
+#contato-container h2,
+#summaryPage h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 700;
+  font-size: 1.9rem;
+  color: #6f4298;
+}
+
+/* Estilos para os rótulos dos campos do formulário */
+.contato-label {
+  display: block;
+  font-weight: 600;
+  margin-top: 15px;
+  margin-bottom: 6px;
+  color: #6f4298;
+}
+
+/* Estilos para os campos de entrada do formulário */
+.contato-input,
+.contato-select,
+.contato-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 1rem;
+  border: 2px solid #cfa3e3;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  color: #4a2975;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* Altura padrão para inputs e selects */
+.contato-input,
+.contato-select {
+    height: 44px;
+    line-height: normal;
+}
+
+/* Estilos para o estado de foco dos campos de entrada */
+.contato-input:focus,
+.contato-select:focus,
+.contato-textarea:focus {
+  border-color: #855ca5;
+  outline: none;
+  background-color: #f9f1fa;
+}
+
+/* Estilos específicos para o campo de texto da área */
+.contato-textarea {
+  height: 88px;
+  line-height: normal;
+  resize: vertical;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+/* Estilos para o botão de envio do formulário */
+button[type="submit"] {
+  margin: 25px auto 0;
+  display: block;
+  background: linear-gradient(135deg, #b993d6 0%, #de6296 100%);
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 14px 0;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(221, 102, 149, 0.7);
+  transition: background 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background: linear-gradient(135deg, #a67ac2 0%, #c94b7c 100%);
+}
+
+/* Estilos para a página de resumo */
+#summaryPage {
+  display: none;
+  color: #4a2975;
+}
+
+/* Estilos para o título da página de resumo */
+#summaryPage h2 {
+  color: #6f4298;
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+/* Estilos para os itens do resumo */
+.summary-item {
+  margin-bottom: 14px;
+  font-size: 1.05rem;
+}
+
+/* Estilos para os rótulos dos itens do resumo */
+.summary-label {
+  font-weight: 700;
+  color: #6f4298;
+  display: inline-block;
+  width: 140px;
+  vertical-align: top;
+}
+
+/* Estilos para o texto dos itens do resumo */
+.summary-text {
+  display: inline-block;
+  max-width: calc(100% - 150px);
+  word-wrap: break-word;
+}
+
+/* Estilos para elementos com preferência de contraste */
+.elemento {
+  color: black;
+  background-color: white;
+}
+
+@media (prefers-contrast: more) {
+  .elemento {
+    color: CanvasText;
+    background-color: Canvas;
+  }
+}
